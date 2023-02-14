@@ -1,5 +1,5 @@
 # workflow工作流名称
-name: Deploy
+name: 工作流一
 # 作者
 author: "https://github.com/ophub"
 # 描述
@@ -8,6 +8,7 @@ description: "测试工作流"
 
 # 设置触发条件（手动触发运行）
 on:
+  repository_dispatch:
   # 说明该工作流为可复用工作流（可被其他工作流引用）
   workflow_call:
     # 定义参数，运行时可以指定填写
