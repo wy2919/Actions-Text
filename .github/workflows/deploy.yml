@@ -9,8 +9,10 @@ description: "测试工作流"
 # 设置触发条件（手动触发运行）
 on:
   repository_dispatch:
-  # 说明该工作流为可复用工作流（可被其他工作流引用）
-  workflow_call:
+  # 可复用工作流（可被其他工作流引用,但不能手动创建）
+#  workflow_call:
+  # 手动执行工作流
+  workflow_dispatch:
     # 定义参数，运行时可以指定填写
     inputs:
       # 定义param1参数
