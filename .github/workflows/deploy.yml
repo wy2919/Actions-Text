@@ -36,7 +36,7 @@ jobs:
     # 其他job调用当前job时当前job的运行完毕输出返回
     outputs:
       # 自定义变量, 该变量为步骤2(step2)输出的 'is_update2' 变量
-      is_update: ${{ steps.step2.outputs.is_update2 }}
+      is_update2: ${{ steps.step2.outputs.is_update2 }}
     # steps，包含多个step
     steps:
       # 步骤 id
