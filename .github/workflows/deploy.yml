@@ -1,0 +1,81 @@
+# workflow工作流名称
+name: Deploy
+# 作者
+author: "https://github.com/ophub"
+# 描述
+description: "测试工作流"
+
+
+# 设置触发条件（手动触发运行）
+on:
+  # 说明该工作流为可复用工作流（可被其他工作流引用）
+  workflow_call:
+    # 定义参数，运行时可以指定填写
+    inputs:
+      # 定义param1参数
+      param1:
+        # 设置是否必须
+        required: true
+        # 类型字符串（必要）
+        type: string
+      # 定义param2参数
+      param2:
+        # 设置是否必须
+        required: true
+        # 类型字符串（必要）
+        type: string
+
+
+# 工作流作业jobs，包含多个job
+jobs:
+  # 创建job1，包含多个step
+  job1:
+    # 运行时名称
+    name: 任务1
+    # 运行的操作系统
+    runs-on: ubuntu-latest
+    # 其他job调用当前job时当前job的运行完毕输出返回
+    outputs:
+      # 自定义变量, 该变量为步骤2(step2)输出的 'is_update' 变量
+      is_update: ${{ steps.step2.outputs.is_update }}
+    # steps，包含多个step
+    steps:
+      # 步骤 id
+      - id: step1
+        # 步骤名
+        name: 步骤1
+        # 复用其他仓库的工作流 "actions/checkout"，该工作流的作用是拉取最近仓库的代码
+        uses: actions/checkout@v3
+        # 复用工作流需要的参数
+        with:
+          # 拉取仓库的深度，这是 "actions/checkout" 工作流规定的输入参数
+          fetch-depth: 2
+      # 步骤 id 用于上面的outputs
+      - id: step2
+        # 步骤名
+        name: 步骤2
+        # 在设置的操作系统的 shell 或 bash 上运行脚本或者命令，
+        run: |
+          echo "您好！" | 
+          echo "is_update=true" >> $GITHUB_OUTPUT
+  # 创建job2，包含多个step
+  job2:
+    # 依赖 job1， 只有job1 运行完才开始启动
+    needs: job1
+    # 运行时名称
+    name: 任务2
+    # 运行的操作系统
+    runs-on: ubuntu-latest
+    # 运行条件，这里使用了上面作业输出的 is_update变量
+    if: ${{ needs.check-update.outputs.is_update == 'true' }}
+    # 设置步骤名称
+    steps:
+      # 使用可复用工作流，拉取最新代码
+      - name: Check out the repo
+        uses: actions/checkout@v3
+      # 使用可复用工作流，安装JDK17
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'adopt'
