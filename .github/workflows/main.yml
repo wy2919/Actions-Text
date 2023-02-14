@@ -7,7 +7,7 @@ on:
   repository_dispatch:
   # 可复用工作流（可被其他工作流引用,但不能手动创建）
 #  workflow_call:
-    workflow_dispatch:
+  workflow_dispatch:
     # 定义参数，运行时可以指定填写
     inputs:
       # 定义param1参数
