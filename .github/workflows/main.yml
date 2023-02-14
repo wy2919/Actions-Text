@@ -1,0 +1,80 @@
+# workflow工作流名称
+name: 工作流一
+
+
+# 设置触发条件（手动触发运行）
+on:
+  repository_dispatch:
+  # 可复用工作流（可被其他工作流引用,但不能手动创建）
+#  workflow_call:
+  # 手动执行工作流
+  workflow_dispatch:
+    # 定义参数，运行时可以指定填写
+    inputs:
+      logLevel:
+        description: '参数1'
+        required: true
+        default: 'warning' 
+        type: choice
+        options:
+        - info
+        - warning
+        - debug 
+      print_tags:
+        description: '参数2'
+        required: true 
+        type: boolean 
+      tags:
+        description: '参数3'
+        required: true 
+        type: string
+      environment:
+        description: '参数4'
+        type: environment
+        required: true 
+
+
+# 工作流作业jobs，包含多个job
+jobs:
+  # 创建job1，包含多个step
+  job1:
+    # 运行时名称
+    name: 任务1
+    # 运行的操作系统
+    runs-on: ubuntu-latest
+    # 其他job调用当前job时当前job的运行完毕输出返回
+    outputs:
+      # 自定义变量, 该变量为步骤2(step2)输出的 'is_update2' 变量
+      is_update2: ${{ steps.step2.outputs.is_update2 }}
+    # steps，包含多个step
+    steps:
+      # 步骤 id
+      - id: step1
+        # 步骤名
+        name: 步骤1
+        # 复用其他仓库的工作流 "actions/checkout"，该工作流的作用是拉取最近仓库的代码
+        uses: actions/checkout@v3
+        # 复用工作流需要的参数
+        with:
+          # 拉取仓库的深度，这是 "actions/checkout" 工作流规定的输入参数
+          fetch-depth: 2
+      # 步骤 id 用于上面的outputs
+      - id: step2
+        # 步骤名
+        name: 步骤2
+        # 在设置的操作系统的 shell 或 bash 上运行脚本或者命令，
+        # 返回变量is_update=true1到全局返回变量$GITHUB_OUTPUT
+        # 返回变量is_update=true2到全局返回变量$GITHUB_OUTPUT
+        run: |
+          echo "您好！" 
+          echo "is_update1=true" >> $GITHUB_OUTPUT
+          echo "is_update2=true" >> $GITHUB_OUTPUT
+      # 步骤 id 用于上面的outputs
+      - id: step3
+        # 步骤名
+        name: 步骤3
+        # 判断该步骤是否执行，判断step2中设置的变量is_update1 && cancelled(手动取消)
+        if: ${{ steps.step2.outputs.is_update1 }} == 'true' && !cancelled()
+        # 在设置的操作系统的 shell 或 bash 上运行脚本或者命令，
+        run: |
+          echo "您好！"
