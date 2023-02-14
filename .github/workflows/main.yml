@@ -7,31 +7,31 @@ on:
   repository_dispatch:
   # 可复用工作流（可被其他工作流引用,但不能手动创建）
 #  workflow_call:
-  # 手动执行工作流
-  workflow_dispatch:
+    workflow_dispatch:
     # 定义参数，运行时可以指定填写
     inputs:
-      logLevel:
+      # 定义param1参数
+      param1:
         description: '参数1'
         required: true
-        default: 'warning' 
+        default: 'warning'
         type: choice
         options:
-        - info
-        - warning
-        - debug 
-      print_tags:
+          - info
+          - warning
+          - debug
+      param2:
         description: '参数2'
-        required: true 
-        type: boolean 
-      tags:
+        required: true
+        type: boolean
+      param3:
         description: '参数3'
-        required: true 
+        required: true
         type: string
-      environment:
+      param4:
         description: '参数4'
         type: environment
-        required: true 
+        required: true
 
 
 # 工作流作业jobs，包含多个job
