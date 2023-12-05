@@ -1,40 +1,145 @@
 {
   "Regions": {
-    "1": {
-      "RegionID": 1,
-      "RegionCode": "nyc",
-      "RegionName": "New York City",
+    "900": {
+      "RegionID": 900,
+      "RegionCode": "免费节点-100",
       "Nodes": [
         {
-          "Name": "1f",
-          "RegionID": 1,
-          "HostName": "derp1f.tailscale.com",
-          "IPv4": "199.38.181.104",
-          "IPv6": "2607:f740:f::bc"
-        },
-        {
-          "Name": "1g",
-          "RegionID": 1,
-          "HostName": "derp1g.tailscale.com",
-          "IPv4": "209.177.145.120",
-          "IPv6": "2607:f740:f::3eb"
-        },
-        {
-          "Name": "1h",
-          "RegionID": 1,
-          "HostName": "derp1h.tailscale.com",
-          "IPv4": "199.38.181.93",
-          "IPv6": "2607:f740:f::afd"
-        },
-        {
-          "Name": "1i",
-          "RegionID": 1,
-          "HostName": "derp1i.tailscale.com",
-          "IPv4": "199.38.181.103",
-          "IPv6": "2607:f740:f::e19",
-          "STUNOnly": true
+          "Name": "900",
+          "RegionID": 900,
+          "HostName": "82.157.71.184",
+          "InsecureForTests": true,
+          "DERPPort": 443
         }
-      ]
+      ],
+      "RegionName": "北京市北京市 腾讯云"
+    },
+    "901": {
+      "RegionID": 901,
+      "RegionCode": "免费节点-1",
+      "Nodes": [
+        {
+          "Name": "901",
+          "RegionID": 901,
+          "HostName": "113.120.110.137",
+          "IPv4": "113.120.110.137",
+          "InsecureForTests": true,
+          "DERPPort": 12345
+        }
+      ],
+      "RegionName": "山东省青岛市 电信"
+    },
+    "902": {
+      "RegionID": 902,
+      "RegionCode": "免费节点-2",
+      "Nodes": [
+        {
+          "Name": "902",
+          "RegionID": 902,
+          "HostName": "101.42.90.98",
+          "InsecureForTests": true,
+          "DERPPort": 443
+        }
+      ],
+      "RegionName": "北京市海淀区"
+    },
+    "903": {
+      "RegionID": 903,
+      "RegionCode": "免费节点-3",
+      "Nodes": [
+        {
+          "Name": "903",
+          "RegionID": 903,
+          "IPv4": "36.110.217.142",
+          "InsecureForTests": true,
+          "DERPPort": 8081
+        }
+      ],
+      "RegionName": "北京市北京市 电信"
+    },
+    "904": {
+      "RegionID": 904,
+      "RegionCode": "免费节点-4",
+      "Nodes": [
+        {
+          "Name": "904",
+          "RegionID": 904,
+          "IPv4": "101.39.200.199",
+          "InsecureForTests": true,
+          "DERPPort": 8443
+        }
+      ],
+      "RegionName": "北京市北京市 鹏博士宽带"
+    },
+    "905": {
+      "RegionID": 905,
+      "RegionCode": "免费节点-5",
+      "Nodes": [
+        {
+          "Name": "905",
+          "RegionID": 905,
+          "IPv4": "39.105.144.14",
+          "InsecureForTests": true,
+          "DERPPort": 9003
+        }
+      ],
+      "RegionName": "北京市北京市 阿里云"
+    },
+    "907": {
+      "RegionID": 907,
+      "RegionCode": "免费节点-7",
+      "Nodes": [
+        {
+          "Name": "907",
+          "RegionID": 907,
+          "HostName": "123.206.53.46",
+          "InsecureForTests": true,
+          "DERPPort": 21443
+        }
+      ],
+      "RegionName": "天津市天津市 腾讯云"
+    },
+    "908": {
+      "RegionID": 908,
+      "RegionCode": "免费节点-8",
+      "Nodes": [
+        {
+          "Name": "908",
+          "RegionID": 908,
+          "HostName": "81.70.193.237",
+          "InsecureForTests": true,
+          "DERPPort": 443
+        }
+      ],
+      "RegionName": "北京市北京市 腾讯云"
+    },
+    "909": {
+      "RegionID": 909,
+      "RegionCode": "免费节点-9",
+      "Nodes": [
+        {
+          "Name": "909",
+          "RegionID": 909,
+          "HostName": "116.196.85.4",
+          "InsecureForTests": true,
+          "DERPPort": 4435
+        }
+      ],
+      "RegionName": "北京市北京市 BGP多线"
+    },
+    "910": {
+      "RegionID": 910,
+      "RegionCode": "免费节点-10",
+      "Nodes": [
+        {
+          "Name": "910",
+          "RegionID": 910,
+          "HostName": "derp.bjmsdc.com",
+          "InsecureForTests": true,
+          "DERPPort": 443
+        }
+      ],
+      "RegionName": "北京市北京市 阿里云"
     }
   }
 }
