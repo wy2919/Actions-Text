@@ -48,7 +48,7 @@
       "RegionCode": "免费节点-4",
       "Nodes": [
         {
-          "Name": "904",
+          "Name": "904a",
           "RegionID": 904,
           "IPv4": "101.39.200.199",
           "InsecureForTests": true,
