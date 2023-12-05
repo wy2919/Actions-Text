@@ -43,20 +43,6 @@
       ],
       "RegionName": "北京市海淀区"
     },
-    "903": {
-      "RegionID": 903,
-      "RegionCode": "免费节点-3",
-      "Nodes": [
-        {
-          "Name": "903",
-          "RegionID": 903,
-          "IPv4": "36.110.217.142",
-          "InsecureForTests": true,
-          "DERPPort": 8081
-        }
-      ],
-      "RegionName": "北京市北京市 电信"
-    },
     "904": {
       "RegionID": 904,
       "RegionCode": "免费节点-4",
