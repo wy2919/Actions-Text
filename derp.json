@@ -50,6 +50,7 @@
         {
           "Name": "904a",
           "RegionID": 904,
+          "HostName": "101.39.200.199",
           "IPv4": "101.39.200.199",
           "InsecureForTests": true,
           "DERPPort": 8443
@@ -64,6 +65,7 @@
         {
           "Name": "905a",
           "RegionID": 905,
+          "HostName": "39.105.144.14",
           "IPv4": "39.105.144.14",
           "InsecureForTests": true,
           "DERPPort": 9003
