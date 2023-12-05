@@ -5,7 +5,7 @@
       "RegionCode": "免费节点-100",
       "Nodes": [
         {
-          "Name": "900",
+          "Name": "900a",
           "RegionID": 900,
           "HostName": "82.157.71.184",
           "InsecureForTests": true,
@@ -19,7 +19,7 @@
       "RegionCode": "免费节点-1",
       "Nodes": [
         {
-          "Name": "901",
+          "Name": "901a",
           "RegionID": 901,
           "HostName": "113.120.110.137",
           "IPv4": "113.120.110.137",
@@ -34,7 +34,7 @@
       "RegionCode": "免费节点-2",
       "Nodes": [
         {
-          "Name": "902",
+          "Name": "902a",
           "RegionID": 902,
           "HostName": "101.42.90.98",
           "InsecureForTests": true,
@@ -62,7 +62,7 @@
       "RegionCode": "免费节点-5",
       "Nodes": [
         {
-          "Name": "905",
+          "Name": "905a",
           "RegionID": 905,
           "IPv4": "39.105.144.14",
           "InsecureForTests": true,
@@ -76,7 +76,7 @@
       "RegionCode": "免费节点-7",
       "Nodes": [
         {
-          "Name": "907",
+          "Name": "907a",
           "RegionID": 907,
           "HostName": "123.206.53.46",
           "InsecureForTests": true,
@@ -90,7 +90,7 @@
       "RegionCode": "免费节点-8",
       "Nodes": [
         {
-          "Name": "908",
+          "Name": "908a",
           "RegionID": 908,
           "HostName": "81.70.193.237",
           "InsecureForTests": true,
@@ -104,7 +104,7 @@
       "RegionCode": "免费节点-9",
       "Nodes": [
         {
-          "Name": "909",
+          "Name": "909a",
           "RegionID": 909,
           "HostName": "116.196.85.4",
           "InsecureForTests": true,
@@ -118,7 +118,7 @@
       "RegionCode": "免费节点-10",
       "Nodes": [
         {
-          "Name": "910",
+          "Name": "910a",
           "RegionID": 910,
           "HostName": "derp.bjmsdc.com",
           "InsecureForTests": true,
